@@ -37,44 +37,46 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
     <nav class="top-nav">
-        <div class="top-nav-links">
-            <?= $this->Html->link(__('Patients'), array(
-                'controller' => 'patients',
-                'action'     => 'index'
-            )); ?>
+        <?php if (!empty($loggedIn)) : ?>
+            <div class="top-nav-links">
+                <?= $this->Html->link(__('Patients'), array(
+                    'controller' => 'patients',
+                    'action'     => 'index'
+                )); ?>
 
-            <?= $this->Html->link(__('Appointments'), array(
-                'controller' => 'appointments',
-                'action'     => 'index'
-            )); ?>
+                <?= $this->Html->link(__('Appointments'), array(
+                    'controller' => 'appointments',
+                    'action'     => 'index'
+                )); ?>
 
-            <?= $this->Html->link(__('Doctors'), array(
-                'controller' => 'doctors',
-                'action'     => 'index'
-            )); ?>
+                <?= $this->Html->link(__('Doctors'), array(
+                    'controller' => 'doctors',
+                    'action'     => 'index'
+                )); ?>
 
-            <?= $this->Html->link(__('Carriers'), array(
-                'controller' => 'carriers',
-                'action'     => 'index'
-            )); ?>
+                <?= $this->Html->link(__('Carriers'), array(
+                    'controller' => 'carriers',
+                    'action'     => 'index'
+                )); ?>
 
-            <?= $this->Html->link(__('Invoices'), array(
-                'controller' => 'invoices',
-                'action'     => 'index'
-            )); ?>
-        </div>
+                <?= $this->Html->link(__('Invoices'), array(
+                    'controller' => 'invoices',
+                    'action'     => 'index'
+                )); ?>
+            </div>
 
-        <div class="top-nav-links">
-            <?= $this->Html->link(__('Manage Users'), array(
-                'controller' => 'users',
-                'action'     => 'index'
-            )); ?>
+            <div class="top-nav-links">
+                <?= $this->Html->link(__('Manage Users'), array(
+                    'controller' => 'users',
+                    'action'     => 'index'
+                )); ?>
 
-            <?= $this->Html->link(__('Logout'), array(
-                'controller' => 'users',
-                'action'     => 'logout'
-            )); ?>
-        </div>
+                <?= $this->Html->link(__('Logout'), array(
+                    'controller' => 'users',
+                    'action'     => 'logout'
+                )); ?>
+            </div>
+        <?php endif; ?>
     </nav>
     <main class="main">
         <div class="container">
